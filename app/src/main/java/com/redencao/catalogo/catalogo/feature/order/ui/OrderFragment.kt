@@ -1,28 +1,25 @@
-package com.redencao.catalogo.catalogo.catalog
+package com.redencao.catalogo.catalogo.feature.order.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.redencao.catalogo.catalogo.R
-import com.redencao.catalogo.catalogo.shared.BaseFragment
+import com.redencao.catalogo.catalogo.feature.shared.BaseFragment
 
-class CatalogFragment: BaseFragment() {
+class OrderFragment: BaseFragment() {
 
     companion object {
-        fun newInstance(): CatalogFragment {
-            return CatalogFragment()
+        fun newInstance(): OrderFragment {
+            return OrderFragment()
         }
     }
 
-    private var verticalOffset = 0
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_catalog, container, false)
+        return inflater.inflate(R.layout.fragment_order, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
     }
-
 }

@@ -1,21 +1,15 @@
 package com.redencao.catalogo.catalogo
 
 import android.app.Application
-import android.arch.persistence.room.Room
-import com.redencao.catalogo.catalogo.database.AppDatabase
+import com.redencao.catalogo.catalogo.feature.di.dbModule
+import org.koin.android.ext.android.startKoin
 
 class RedencaoApplication: Application() {
-
-    companion object {
-        var database: AppDatabase? = null
-    }
 
     override fun onCreate() {
         super.onCreate()
 
-        database = Room.databaseBuilder(this, AppDatabase::class.java, "redencaoDatabase")
-            .allowMainThreadQueries()
-            .build()
+        startKoin(this, listOf(dbModule))
     }
 
 }

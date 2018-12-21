@@ -1,11 +1,11 @@
-package com.redencao.catalogo.catalogo.database
+package com.redencao.catalogo.catalogo.feature.database
 
 import android.arch.persistence.room.Dao
 import android.arch.persistence.room.Delete
 import android.arch.persistence.room.Insert
 import android.arch.persistence.room.OnConflictStrategy.REPLACE
 import android.arch.persistence.room.Query
-import com.redencao.catalogo.catalogo.database.model.ProductData
+import com.redencao.catalogo.catalogo.feature.database.model.ProductData
 
 @Dao
 interface ProductDataDao {

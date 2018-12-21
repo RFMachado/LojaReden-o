@@ -1,11 +1,11 @@
-package com.redencao.catalogo.catalogo.product
+package com.redencao.catalogo.catalogo.feature.product.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.redencao.catalogo.catalogo.R
-import com.redencao.catalogo.catalogo.shared.BaseFragment
+import com.redencao.catalogo.catalogo.feature.shared.BaseFragment
 
 class ProductFragment: BaseFragment() {
 
@@ -14,8 +14,6 @@ class ProductFragment: BaseFragment() {
             return ProductFragment()
         }
     }
-
-    private var verticalOffset = 0
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_product, container, false)

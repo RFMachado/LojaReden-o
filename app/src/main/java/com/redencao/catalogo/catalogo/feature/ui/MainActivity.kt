@@ -1,4 +1,4 @@
-package com.redencao.catalogo.catalogo.main.ui
+package com.redencao.catalogo.catalogo.feature.ui
 
 import android.content.Context
 import android.content.Intent

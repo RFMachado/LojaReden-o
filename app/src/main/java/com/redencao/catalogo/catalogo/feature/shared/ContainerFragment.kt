@@ -1,4 +1,4 @@
-package com.redencao.catalogo.catalogo.shared
+package com.redencao.catalogo.catalogo.feature.shared
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -7,9 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.redencao.catalogo.catalogo.R
-import com.redencao.catalogo.catalogo.catalog.CatalogFragment
-import com.redencao.catalogo.catalogo.order.OrderFragment
-import com.redencao.catalogo.catalogo.product.ProductFragment
+import com.redencao.catalogo.catalogo.feature.catalog.CatalogFragment
+import com.redencao.catalogo.catalogo.feature.order.ui.OrderFragment
+import com.redencao.catalogo.catalogo.feature.product.ui.ProductFragment
 
 class ContainerFragment : BaseFragment() {
 

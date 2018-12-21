@@ -1,8 +1,8 @@
-package com.redencao.catalogo.catalogo.shared
+package com.redencao.catalogo.catalogo.feature.shared
 
 import android.content.Context
 import android.support.v4.app.Fragment
-import com.redencao.catalogo.catalogo.main.ui.MainListener
+import com.redencao.catalogo.catalogo.feature.ui.MainListener
 
 open class BaseFragment: Fragment() {
 

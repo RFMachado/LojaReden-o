@@ -1,4 +1,4 @@
-package com.redencao.catalogo.catalogo.database.model
+package com.redencao.catalogo.catalogo.feature.database.model
 
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey

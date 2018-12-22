@@ -6,9 +6,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".feature.ui.MainActivity">
+        tools:context=".feature.main.ui.MainActivity">
 
-    <com.redencao.catalogo.catalogo.feature.shared.ContainerView
+    <com.redencao.catalogo.catalogo.feature.main.ui.ContainerView
             android:id="@+id/containerView"
             android:layout_width="match_parent"
             android:layout_height="0dp"

@@ -1,4 +1,4 @@
-package com.redencao.catalogo.catalogo.feature.shared
+package com.redencao.catalogo.catalogo.feature.main.ui
 
 import android.content.Context
 import android.os.Parcel

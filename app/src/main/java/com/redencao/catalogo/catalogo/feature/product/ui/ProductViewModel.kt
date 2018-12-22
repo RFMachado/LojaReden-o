@@ -19,4 +19,6 @@ class ProductViewModel(val source: ProductSource): ReactiveViewModel() {
                 { uiData.value = ResultUIModel(error = it) }
             )
     }
+
+    data class ResultUIModel(val data: Boolean = false, val error: Throwable? = null)
 }

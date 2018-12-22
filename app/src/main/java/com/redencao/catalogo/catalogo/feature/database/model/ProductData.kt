@@ -9,5 +9,5 @@ data class ProductData(
     var title: String,
     var type: String,
     var size: String,
-    var cor: String
+    var color: String
 )

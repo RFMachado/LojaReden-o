@@ -1,4 +1,4 @@
-package com.redencao.catalogo.catalogo.feature.ui
+package com.redencao.catalogo.catalogo.feature.main.ui
 
 import android.support.v4.app.Fragment
 

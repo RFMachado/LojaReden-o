@@ -3,6 +3,7 @@ package com.redencao.catalogo.catalogo.feature.di
 import android.arch.persistence.room.Room
 import com.redencao.catalogo.catalogo.feature.catalog.domain.CatalogSource
 import com.redencao.catalogo.catalogo.feature.catalog.repository.CatalogRepository
+import com.redencao.catalogo.catalogo.feature.catalog.ui.CatalogViewModel
 import com.redencao.catalogo.catalogo.feature.database.AppDatabase
 import com.redencao.catalogo.catalogo.feature.product.domain.ProductSource
 import com.redencao.catalogo.catalogo.feature.product.repository.ProductRepository
@@ -15,6 +16,7 @@ val dbModule = module {
         get(),
         AppDatabase::class.java,
         "redencao-database")
+        .fallbackToDestructiveMigration()
         .build()
     }
 
@@ -26,4 +28,5 @@ val appModule = module {
     single<CatalogSource> { CatalogRepository(get()) }
 
     viewModel { ProductViewModel(get()) }
+    viewModel { CatalogViewModel(get()) }
 }

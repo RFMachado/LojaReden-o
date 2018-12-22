@@ -7,7 +7,7 @@ import com.redencao.catalogo.catalogo.util.rx.ReactiveViewModel
 import com.redencao.catalogo.catalogo.util.rx.RxUtils
 import io.reactivex.rxkotlin.plusAssign
 
-class CatalogViewModel (val source: CatalogSource): ReactiveViewModel() {
+class CatalogViewModel(val source: CatalogSource): ReactiveViewModel() {
 
     val uiData = MutableLiveData<ResultUIModel>()
 

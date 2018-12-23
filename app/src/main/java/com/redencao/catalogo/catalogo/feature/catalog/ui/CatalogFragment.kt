@@ -2,7 +2,6 @@ package com.redencao.catalogo.catalogo.feature.catalog.ui
 
 import android.arch.lifecycle.Observer
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +11,7 @@ import com.redencao.catalogo.catalogo.feature.shared.BaseFragment
 import kotlinx.android.synthetic.main.fragment_catalog.*
 import org.koin.android.viewmodel.ext.android.viewModel
 import timber.log.Timber
+import android.support.v7.widget.GridLayoutManager
 
 class CatalogFragment: BaseFragment() {
 
@@ -36,7 +36,7 @@ class CatalogFragment: BaseFragment() {
     }
 
     private fun setuRecyclerView() = with(recyclerView) {
-        layoutManager = LinearLayoutManager(context)
+        layoutManager = GridLayoutManager(context, 2)
         adapter = CatalogAdapter(items)
     }
 

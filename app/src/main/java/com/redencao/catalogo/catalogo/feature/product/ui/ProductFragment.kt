@@ -4,10 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import com.redencao.catalogo.catalogo.R
-import com.redencao.catalogo.catalogo.feature.database.model.ProductData
 import com.redencao.catalogo.catalogo.feature.shared.BaseFragment
+import kotlinx.android.synthetic.main.fragment_product.*
 import org.koin.android.viewmodel.ext.android.viewModel
+
 
 class ProductFragment: BaseFragment() {
 
@@ -24,15 +26,26 @@ class ProductFragment: BaseFragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        viewModel.addProduct(
-            ProductData(
-                0,
-                "camisa redenção",
-                "camisa",
-                "GG",
-                "azul"
-            )
-        )
+
+        setupSpinner()
+
+//        viewModel.addProduct(
+//            ProductData(
+//                0,
+//                "camisa redenção",
+//                "camisa",
+//                "GG",
+//                "azul"
+//            )
+//        )
+    }
+
+    fun setupSpinner() = with(spinner) {
+        val spinnerAdapter = ArrayAdapter.createFromResource(context, R.array.product_type, android.R.layout.simple_spinner_item)
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+
+        adapter = spinnerAdapter
+
     }
 
 }

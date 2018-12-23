@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">Loja Redenção</string>
     <string name="action_settings">Settings</string>
+    <string name="add_product">Adicionar Produto</string>
+
+    <string name="title">Titulo</string>
+    <string name="category">Categoria</string>
+
+    <string-array name="product_type">
+        <item>Camiseta</item>
+        <item>Boné</item>
+        <item>Tênis</item>
+    </string-array>
+
 </resources>

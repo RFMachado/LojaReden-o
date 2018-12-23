@@ -40,11 +40,10 @@ class ProductFragment: BaseFragment() {
 //        )
     }
 
-    fun setupSpinner() = with(spinner) {
-        val spinnerAdapter = ArrayAdapter.createFromResource(context, R.array.product_type, android.R.layout.simple_spinner_item)
-        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-
-        adapter = spinnerAdapter
+    fun setupSpinner() = with(spinnerType) {
+        val spinnerTypeAdapter = ArrayAdapter.createFromResource(context, R.array.product_type, android.R.layout.simple_spinner_item)
+        spinnerTypeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        adapter = spinnerTypeAdapter
 
     }
 

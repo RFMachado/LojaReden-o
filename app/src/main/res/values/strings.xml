@@ -3,7 +3,7 @@
     <string name="action_settings">Settings</string>
     <string name="add_product">Adicionar Produto</string>
 
-    <string name="title">Titulo</string>
+    <string name="title">Descrição</string>
     <string name="category">Categoria</string>
 
     <string-array name="product_type">
@@ -11,5 +11,24 @@
         <item>Boné</item>
         <item>Tênis</item>
     </string-array>
+
+    <string-array name="product_size">
+        <item>PP</item>
+        <item>P</item>
+        <item>M</item>
+        <item>G</item>
+        <item>GG</item>
+        <item>XG</item>
+        <item>XGG</item>
+    </string-array>
+
+    <string-array name="product_color">
+        <item>PP</item>
+        <item>P</item>
+        <item>M</item>
+        <item>G</item>
+        <item>GG</item>
+    </string-array>
+
 
 </resources>

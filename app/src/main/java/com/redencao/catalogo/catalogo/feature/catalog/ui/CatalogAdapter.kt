@@ -3,6 +3,7 @@ package com.redencao.catalogo.catalogo.feature.catalog.ui
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
+import com.bumptech.glide.Glide
 import com.redencao.catalogo.catalogo.R
 import com.redencao.catalogo.catalogo.feature.catalog.domain.Product
 import com.redencao.catalogo.catalogo.util.extensions.inflate
@@ -18,6 +19,10 @@ class CatalogAdapter constructor(items: List<Product>):
 
         txtTitle.text = product.title
         txtType.text = product.type
+
+        Glide.with(context)
+            .load(product.images[0])
+            .into(imgProduct)
 
     }
 

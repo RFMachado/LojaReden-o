@@ -5,6 +5,8 @@
 
     <string name="title">Descrição</string>
     <string name="category">Categoria</string>
+    <string name="value">Valor</string>
+    <string name="gallery">Galeria</string>
 
     <string-array name="product_type">
         <item>Camiseta</item>

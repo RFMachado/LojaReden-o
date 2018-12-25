@@ -76,7 +76,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end|bottom"
-                android:layout_margin="15dp"/>
+                android:layout_margin="15dp"
+                android:src="@drawable/ic_plus_white"/>
     </FrameLayout>
 
 </LinearLayout>

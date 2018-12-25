@@ -75,6 +75,10 @@ dependencies {
 
     //Timber
     implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    //ImagePicker
+    implementation 'com.github.esafirm.android-image-picker:imagepicker:1.13.1'
+    implementation 'com.github.esafirm.android-image-picker:rximagepicker:1.13.1'
 }
 
 androidExtensions {

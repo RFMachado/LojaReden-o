@@ -1,6 +1,5 @@
 package com.redencao.catalogo.catalogo.feature.catalog.repository.mapper
 
-import android.net.Uri
 import com.redencao.catalogo.catalogo.feature.catalog.domain.Product
 import com.redencao.catalogo.catalogo.feature.database.model.ProductData
 
@@ -16,12 +15,12 @@ object CatalogMapper {
         images = mapImages(productData)
     )
 
-    fun mapImages(productData: ProductData): List<Uri> {
-        val listImages = arrayListOf<Uri>()
+    fun mapImages(productData: ProductData): List<String> {
+        val listImages = arrayListOf<String>()
 
-        listImages.add(Uri.parse(productData.image1))
-        listImages.add(Uri.parse(productData.image2))
-        listImages.add(Uri.parse(productData.image3))
+        listImages.add(productData.image1)
+        listImages.add(productData.image2)
+        listImages.add(productData.image3)
 
         return listImages
     }

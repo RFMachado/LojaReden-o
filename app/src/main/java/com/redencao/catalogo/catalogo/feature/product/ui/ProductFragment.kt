@@ -1,13 +1,13 @@
 package com.redencao.catalogo.catalogo.feature.product.ui
 
-import android.app.Activity
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import com.esafirm.imagepicker.features.ImagePicker
+import com.esafirm.imagepicker.model.Image
 import com.redencao.catalogo.catalogo.R
 import com.redencao.catalogo.catalogo.feature.database.model.ProductData
 import com.redencao.catalogo.catalogo.feature.shared.BaseFragment
@@ -15,18 +15,15 @@ import kotlinx.android.synthetic.main.fragment_product.*
 import org.koin.android.viewmodel.ext.android.viewModel
 import permissions.dispatcher.NeedsPermission
 import permissions.dispatcher.RuntimePermissions
-import timber.log.Timber
-import java.io.IOException
 
 
 @RuntimePermissions
 class ProductFragment: BaseFragment() {
 
     private val viewModel: ProductViewModel by viewModel()
-    val imagesUri = ArrayList<String>()
+    val imagesFromGallery = ArrayList<Image>()
 
     companion object {
-        const val OPEN_GALLERY = 2
 
         fun newInstance(): ProductFragment {
             return ProductFragment()
@@ -57,9 +54,9 @@ class ProductFragment: BaseFragment() {
                     "camisa",
                     "GG",
                     "azul",
-                    imagesUri[0],
-                    imagesUri[1],
-                    imagesUri[2]
+                    imagesFromGallery[0].path,
+                    imagesFromGallery[1].path,
+                    imagesFromGallery[2].path
                 )
             )
         }
@@ -68,13 +65,9 @@ class ProductFragment: BaseFragment() {
 
     @NeedsPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
     fun openGallery() {
-        val intent = Intent().apply {
-            type = "image/*"
-            putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true)
-            action = Intent.ACTION_GET_CONTENT
-        }
-
-        startActivityForResult(Intent.createChooser(intent, "Select Picture"), OPEN_GALLERY)
+        ImagePicker.create(this)
+            .multi()
+            .start()
     }
 
     fun setupSpinner() = with(spinnerType) {
@@ -85,28 +78,15 @@ class ProductFragment: BaseFragment() {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (resultCode == Activity.RESULT_OK) {
+        if (ImagePicker.shouldHandle(requestCode, resultCode, data)) {
 
-            if(requestCode == OPEN_GALLERY && data != null) {
-                try {
-                    imagesUri.clear()
-                    if (data.clipData != null) {
-                        val count =
-                            data.clipData.itemCount
+            val images = ImagePicker.getImages(data)
 
-                        for (i in 0 until count)
-                            imagesUri.add(data.clipData.getItemAt(i).uri.toString())
-
-                    }
-
-                } catch (e: IOException) {
-                    Timber.e(e)
-                }
-            }
-
+            imagesFromGallery.clear()
+            imagesFromGallery.addAll(images)
         }
 
+        super.onActivityResult(requestCode, resultCode, data)
     }
 
 }

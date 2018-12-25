@@ -11,7 +11,5 @@ data class ProductData(
     var type: String,
     var size: String,
     var color: String,
-    val image1: String,
-    val image2: String,
-    val image3: String
+    val images: List<String>
 )

@@ -21,7 +21,7 @@ class CatalogAdapter constructor(items: List<Product>):
         txtType.text = product.type
 
         Glide.with(context)
-            .load(product.images[0])
+            .load(product.images.firstOrNull())
             .into(imgProduct)
 
     }

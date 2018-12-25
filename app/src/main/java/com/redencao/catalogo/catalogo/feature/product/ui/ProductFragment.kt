@@ -1,27 +1,30 @@
 package com.redencao.catalogo.catalogo.feature.product.ui
 
+import android.arch.lifecycle.Observer
 import android.content.Intent
 import android.os.Bundle
+import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import com.esafirm.imagepicker.features.ImagePicker
-import com.esafirm.imagepicker.model.Image
 import com.redencao.catalogo.catalogo.R
 import com.redencao.catalogo.catalogo.feature.database.model.ProductData
 import com.redencao.catalogo.catalogo.feature.shared.BaseFragment
+import com.redencao.catalogo.catalogo.util.extensions.toast
 import kotlinx.android.synthetic.main.fragment_product.*
 import org.koin.android.viewmodel.ext.android.viewModel
 import permissions.dispatcher.NeedsPermission
 import permissions.dispatcher.RuntimePermissions
+import timber.log.Timber
 
 
 @RuntimePermissions
 class ProductFragment: BaseFragment() {
 
     private val viewModel: ProductViewModel by viewModel()
-    val imagesFromGallery = ArrayList<Image>()
+    private val imagesFromGallery = ArrayList<String>()
 
     companion object {
 
@@ -37,6 +40,8 @@ class ProductFragment: BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         setupSpinner()
+        setuRecyclerView()
+        setupViewModel()
         bindListeners()
     }
 
@@ -54,9 +59,7 @@ class ProductFragment: BaseFragment() {
                     "camisa",
                     "GG",
                     "azul",
-                    imagesFromGallery[0].path,
-                    imagesFromGallery[1].path,
-                    imagesFromGallery[2].path
+                    imagesFromGallery
                 )
             )
         }
@@ -70,11 +73,32 @@ class ProductFragment: BaseFragment() {
             .start()
     }
 
+    fun setuRecyclerView() = with(recyclerView) {
+        layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        adapter = ImagesPickerAdapter(imagesFromGallery)
+    }
+
     fun setupSpinner() = with(spinnerType) {
         val spinnerTypeAdapter = ArrayAdapter.createFromResource(context, R.array.product_type, android.R.layout.simple_spinner_item)
         spinnerTypeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         adapter = spinnerTypeAdapter
 
+    }
+
+    private fun setupViewModel() {
+        viewModel.uiData.observe(this, Observer { uiData ->
+            when {
+                uiData?.data == true -> {
+                    showResult()
+                    uiData.data = false
+                }
+                uiData?.error is Throwable -> Timber.e(uiData.error)
+            }
+        })
+    }
+
+    private fun showResult() {
+        context?.toast(R.string.data_ok)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -83,10 +107,21 @@ class ProductFragment: BaseFragment() {
             val images = ImagePicker.getImages(data)
 
             imagesFromGallery.clear()
-            imagesFromGallery.addAll(images)
+
+            images.forEach { image ->
+                imagesFromGallery.add(image.path)
+            }
+
+            recyclerView.adapter.notifyDataSetChanged()
+
         }
 
         super.onActivityResult(requestCode, resultCode, data)
+    }
+
+    override fun onDestroyView() {
+        viewModel.unbind()
+        super.onDestroyView()
     }
 
 }

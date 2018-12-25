@@ -15,10 +15,14 @@ class ProductViewModel(val source: ProductSource): ReactiveViewModel() {
         disposables += source.insert(product)
             .compose(RxUtils.applyCompletableSchedulers())
             .subscribe(
-                { },
-                { uiData.value = ResultUIModel(error = it) }
+                {
+                    uiData.value = ResultUIModel( true)
+                },
+                {
+                    uiData.value = ResultUIModel(error = it)
+                }
             )
     }
 
-    data class ResultUIModel(val data: Boolean = false, val error: Throwable? = null)
+    data class ResultUIModel(var data: Boolean = false, val error: Throwable? = null)
 }

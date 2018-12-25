@@ -79,6 +79,9 @@ dependencies {
     //ImagePicker
     implementation 'com.github.esafirm.android-image-picker:imagepicker:1.13.1'
     implementation 'com.github.esafirm.android-image-picker:rximagepicker:1.13.1'
+
+    //Gson
+    implementation 'com.google.code.gson:gson:2.8.5'
 }
 
 androidExtensions {

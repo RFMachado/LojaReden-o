@@ -12,17 +12,8 @@ object CatalogMapper {
         type = productData.type,
         size =  productData.size,
         color = productData.color,
-        images = mapImages(productData)
+        images = productData.images
     )
 
-    fun mapImages(productData: ProductData): List<String> {
-        val listImages = arrayListOf<String>()
-
-        listImages.add(productData.image1)
-        listImages.add(productData.image2)
-        listImages.add(productData.image3)
-
-        return listImages
-    }
 
 }

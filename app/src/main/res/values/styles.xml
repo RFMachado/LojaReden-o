@@ -15,4 +15,20 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
 
+    <style name="trueno.regular" parent="TextAppearance.AppCompat">
+            <item name="android:fontFamily">@font/truenoregular</item>
+    </style>
+
+    <style name="trueno.light" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/truenolight</item>
+    </style>
+
+    <style name="trueno.bold" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/truenobold</item>
+    </style>
+
+    <style name="trueno.semibold" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/truenosemibold</item>
+    </style>
+
 </resources>

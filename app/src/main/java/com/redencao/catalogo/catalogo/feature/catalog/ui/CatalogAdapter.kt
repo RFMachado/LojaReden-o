@@ -17,8 +17,10 @@ class CatalogAdapter constructor(items: List<Product>):
     override fun onBindViewHolder(holder: ViewHolder, position: Int): Unit = with(holder.itemView) {
         val product = products[position]
 
-        txtTitle.text = product.title
-        txtType.text = product.type
+        txtDescription.text = product.description
+        txtCategory.text = product.category
+
+        txtValue.text = context.getString(R.string.product_value, product.value)
 
         Glide.with(context)
             .load(product.images.firstOrNull())

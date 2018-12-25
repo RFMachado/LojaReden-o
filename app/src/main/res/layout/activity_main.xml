@@ -25,34 +25,32 @@
         <TextView
                 android:id="@+id/btnCatalog"
                 android:layout_width="0dp"
-                  android:layout_height="match_parent"
-                  android:layout_weight="1"
-                  android:text="Catalogo"
-                  android:gravity="center"/>
-
-        <View android:layout_width="1dp"
-              android:layout_height="match_parent"
-              android:background="@color/colorPrimary"/>
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/gray"
+                android:text="@string/catalog"
+                style="@style/trueno.semibold"
+                android:gravity="center"/>
 
         <TextView
                 android:id="@+id/btnProduct"
                 android:layout_width="0dp"
-                  android:layout_height="match_parent"
-                  android:layout_weight="1"
-                  android:text="Produtos"
-                  android:gravity="center"/>
-
-        <View android:layout_width="1dp"
-              android:layout_height="match_parent"
-              android:background="@color/colorPrimary"/>
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/product"
+                android:textColor="@color/gray"
+                style="@style/trueno.semibold"
+                android:gravity="center"/>
 
         <TextView
                 android:id="@+id/btnOrder"
                 android:layout_width="0dp"
-                  android:layout_height="match_parent"
-                  android:layout_weight="1"
-                  android:text="Pedidos"
-                  android:gravity="center"/>
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/gray"
+                android:text="@string/order"
+                style="@style/trueno.semibold"
+                android:gravity="center"/>
 
     </LinearLayout>
 

@@ -10,6 +10,9 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), MainListener {
 
+    val colorEnable by lazy { resources.getColor(R.color.colorPrimaryDark) }
+    val colorDisable by lazy { resources.getColor(R.color.gray) }
+
     companion object {
         fun launchIntent(context: Context) = Intent(context, MainActivity::class.java)
     }
@@ -20,6 +23,7 @@ class MainActivity : AppCompatActivity(), MainListener {
 
         if (savedInstanceState == null) {
             containerView.setCurrentFragment(0)
+            setCurrentTab(0)
         }
 
         bindListener()
@@ -31,6 +35,10 @@ class MainActivity : AppCompatActivity(), MainListener {
                 gotoTab(index)
             }
         }
+
+        containerView.setOnChangeListener {
+            setCurrentTab(it)
+        }
     }
 
     private fun gotoTab(position: Int) {
@@ -41,6 +49,12 @@ class MainActivity : AppCompatActivity(), MainListener {
         }
 
         containerView.setCurrentFragment(position)
+    }
+
+    private fun setCurrentTab(position: Int) {
+        btnCatalog.setTextColor(if (position == 0) colorEnable else colorDisable)
+        btnProduct.setTextColor(if (position == 1) colorEnable else colorDisable)
+        btnOrder.setTextColor(if (position == 2) colorEnable else colorDisable)
     }
 
     override fun openFragment(fragment: Fragment?) {

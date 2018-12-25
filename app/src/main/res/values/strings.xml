@@ -7,8 +7,13 @@
     <string name="category">Categoria</string>
     <string name="value">Valor</string>
     <string name="gallery">Galeria</string>
+    <string name="catalog">Catálogo</string>
+    <string name="product">Produtos</string>
+    <string name="order">Pedidos</string>
 
     <string name="data_ok">Produto adicionado com sucesso!</string>
+
+    <string name="product_value">R$ %1$.2f</string>
 
     <string-array name="product_type">
         <item>Camiseta</item>

@@ -59,6 +59,7 @@ class ProductFragment: BaseFragment() {
                     "camisa",
                     "GG",
                     "azul",
+                    49.90,
                     imagesFromGallery
                 )
             )

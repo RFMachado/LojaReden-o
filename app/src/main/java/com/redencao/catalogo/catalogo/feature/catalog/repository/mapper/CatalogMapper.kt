@@ -8,10 +8,11 @@ object CatalogMapper {
 
     fun map(productData: ProductData) = Product(
         id =  productData.id,
-        title = productData.title,
-        type = productData.type,
+        description = productData.description,
+        category = productData.category,
         size =  productData.size,
         color = productData.color,
+        value = productData.value,
         images = productData.images
     )
 

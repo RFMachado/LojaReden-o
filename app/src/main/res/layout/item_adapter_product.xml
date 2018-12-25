@@ -4,35 +4,45 @@
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        card_view:cardCornerRadius="5dp"
+        android:layout_height="280dp"
+        card_view:cardCornerRadius="3dp"
         android:layout_margin="2dp">
 
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="300dp">
+            android:layout_height="280dp">
 
         <ImageView
                 android:id="@+id/imgProduct"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="180dp"
                 android:layout_gravity="center"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="10dp"
                 tools:src="@mipmap/ic_launcher"/>
 
         <TextView
-                android:id="@+id/txtTitle"
+                android:id="@+id/txtDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:text="Camiseta redenção 100% algodão"
+                style="@style/trueno.bold"
                 android:gravity="center"/>
 
         <TextView
-                android:id="@+id/txtType"
+                android:id="@+id/txtCategory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:text="Camiseta"
+                style="@style/trueno.regular"
+                android:gravity="center"/>
+
+        <TextView
+                android:id="@+id/txtValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/trueno.regular"
+                tools:text="R$ 49,90"
                 android:gravity="center"/>
 
     </LinearLayout>

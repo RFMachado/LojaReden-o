@@ -1,4 +1,4 @@
-package com.redencao.catalogo.catalogo.feature.product.domain
+package com.redencao.catalogo.catalogo.feature.product.create.domain
 
 import com.redencao.catalogo.catalogo.feature.database.model.ProductData
 import io.reactivex.Completable

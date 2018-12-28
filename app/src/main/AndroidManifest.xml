@@ -17,6 +17,8 @@
                 android:label="@string/app_name"
                 android:theme="@style/AppTheme.NoActionBar"/>
 
+        <activity android:name=".feature.product.detail.ui.ProductDetailActivity"/>
+
         <activity android:name=".feature.splash.SplashActivity"
                   android:screenOrientation="portrait">
             <intent-filter>

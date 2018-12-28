@@ -9,7 +9,7 @@ import com.redencao.catalogo.catalogo.feature.catalog.domain.Product
 import com.redencao.catalogo.catalogo.util.extensions.inflate
 import kotlinx.android.synthetic.main.item_adapter_product.view.*
 
-class CatalogAdapter constructor(items: List<Product>):
+class CatalogAdapter constructor(items: List<Product>, private val listener: (Product) -> Unit):
     RecyclerView.Adapter<CatalogAdapter.ViewHolder>() {
 
     val products = items
@@ -25,6 +25,10 @@ class CatalogAdapter constructor(items: List<Product>):
         Glide.with(context)
             .load(product.images.firstOrNull())
             .into(imgProduct)
+
+        setOnClickListener {
+            listener.invoke(product)
+        }
 
     }
 

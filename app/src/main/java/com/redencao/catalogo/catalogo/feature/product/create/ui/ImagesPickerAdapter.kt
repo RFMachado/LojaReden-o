@@ -1,4 +1,4 @@
-package com.redencao.catalogo.catalogo.feature.product.ui
+package com.redencao.catalogo.catalogo.feature.product.create.ui
 
 import android.support.v7.widget.RecyclerView
 import android.view.View

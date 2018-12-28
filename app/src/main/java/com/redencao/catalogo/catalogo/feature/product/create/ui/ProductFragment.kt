@@ -1,4 +1,4 @@
-package com.redencao.catalogo.catalogo.feature.product.ui
+package com.redencao.catalogo.catalogo.feature.product.create.ui
 
 import android.arch.lifecycle.Observer
 import android.content.Intent

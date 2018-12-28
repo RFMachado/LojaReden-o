@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import com.redencao.catalogo.catalogo.R
 import com.redencao.catalogo.catalogo.feature.catalog.ui.CatalogFragment
 import com.redencao.catalogo.catalogo.feature.order.ui.OrderFragment
-import com.redencao.catalogo.catalogo.feature.product.ui.ProductFragment
+import com.redencao.catalogo.catalogo.feature.product.create.ui.ProductFragment
 import com.redencao.catalogo.catalogo.feature.shared.BaseFragment
 
 class ContainerFragment : BaseFragment() {

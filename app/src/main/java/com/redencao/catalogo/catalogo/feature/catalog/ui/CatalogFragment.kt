@@ -12,6 +12,7 @@ import kotlinx.android.synthetic.main.fragment_catalog.*
 import org.koin.android.viewmodel.ext.android.viewModel
 import timber.log.Timber
 import android.support.v7.widget.GridLayoutManager
+import com.redencao.catalogo.catalogo.feature.product.detail.ui.ProductDetailActivity
 
 class CatalogFragment: BaseFragment() {
 
@@ -37,7 +38,10 @@ class CatalogFragment: BaseFragment() {
 
     private fun setuRecyclerView() = with(recyclerView) {
         layoutManager = GridLayoutManager(context, 2)
-        adapter = CatalogAdapter(items)
+        adapter = CatalogAdapter(items) { product ->
+            val intent = ProductDetailActivity.launchIntent(context, product)
+            startActivity(intent)
+        }
     }
 
     private fun setupViewModel() {

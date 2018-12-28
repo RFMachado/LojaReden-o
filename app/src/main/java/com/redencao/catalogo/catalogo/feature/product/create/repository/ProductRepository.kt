@@ -1,8 +1,8 @@
-package com.redencao.catalogo.catalogo.feature.product.repository
+package com.redencao.catalogo.catalogo.feature.product.create.repository
 
 import com.redencao.catalogo.catalogo.feature.database.ProductDataDao
 import com.redencao.catalogo.catalogo.feature.database.model.ProductData
-import com.redencao.catalogo.catalogo.feature.product.domain.ProductSource
+import com.redencao.catalogo.catalogo.feature.product.create.domain.ProductSource
 import io.reactivex.Completable
 import io.reactivex.Single
 

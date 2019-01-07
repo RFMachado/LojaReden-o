@@ -33,15 +33,19 @@ class ProductFragment: BaseFragment() {
         }
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        setupViewModel()
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_product, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
         setupSpinner()
         setuRecyclerView()
-        setupViewModel()
         bindListeners()
     }
 
@@ -74,12 +78,12 @@ class ProductFragment: BaseFragment() {
             .start()
     }
 
-    fun setuRecyclerView() = with(recyclerView) {
+    private fun setuRecyclerView() = with(recyclerView) {
         layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         adapter = ImagesPickerAdapter(imagesFromGallery)
     }
 
-    fun setupSpinner() = with(spinnerType) {
+    private fun setupSpinner() = with(spinnerType) {
         val spinnerTypeAdapter = ArrayAdapter.createFromResource(context, R.array.product_type, android.R.layout.simple_spinner_item)
         spinnerTypeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         adapter = spinnerTypeAdapter
@@ -91,7 +95,6 @@ class ProductFragment: BaseFragment() {
             when {
                 uiData?.data == true -> {
                     showResult()
-                    uiData.data = false
                 }
                 uiData?.error is Throwable -> Timber.e(uiData.error)
             }

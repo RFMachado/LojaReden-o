@@ -13,12 +13,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
+        <View android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@drawable/gradient"/>
+
         <me.relex.circleindicator.CircleIndicator
                 android:id="@+id/indicator"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:layout_gravity="bottom"
-                app:ci_drawable="@drawable/circleindicator_round"/>
+                android:layout_gravity="bottom"/>
+
 
         <ImageView
                 android:id="@+id/btnArrow"
@@ -28,7 +32,6 @@
                 android:scaleType="center"/>
 
     </FrameLayout>
-
 
 
 </LinearLayout>

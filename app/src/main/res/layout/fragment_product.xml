@@ -15,6 +15,20 @@
 
     </FrameLayout>
 
+    <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:orientation="vertical">
+
+        <android.support.design.widget.TextInputEditText
+                android:id="@+id/edtDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/title"/>
+
+    </android.support.design.widget.TextInputLayout>
+
 
     <LinearLayout
             android:layout_width="match_parent"
@@ -29,35 +43,21 @@
                 android:orientation="vertical">
 
             <android.support.design.widget.TextInputEditText
-                    android:id="@+id/edtDescription"
+                    android:id="@+id/edtValue"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/title"/>
+                    android:inputType="numberDecimal"
+                    android:hint="@string/price"/>
 
         </android.support.design.widget.TextInputLayout>
 
-        <Spinner
-                android:id="@+id/spinnerCategory"
-                android:layout_width="150dp"
+        <Spinner android:id="@+id/spinnerCategory"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:layout_gravity="center"/>
 
     </LinearLayout>
-
-    <android.support.design.widget.TextInputLayout
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:orientation="vertical">
-
-        <android.support.design.widget.TextInputEditText
-                android:id="@+id/edtValue"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:hint="@string/value"/>
-
-    </android.support.design.widget.TextInputLayout>
 
 
     <LinearLayout
@@ -69,18 +69,20 @@
             android:layout_marginTop="30dp"
             android:layout_marginBottom="20dp">
 
-        <Button
-                android:id="@+id/btnGallery"
-                android:layout_width="100dp"
+        <Button android:id="@+id/btnGallery"
+                android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:text="@string/gallery"/>
+                android:paddingRight="15dp"
+                android:paddingLeft="15dp"
+                android:text="@string/open_gallery"
+                android:textColor="@color/ef_white"
+                android:background="@drawable/button_border"/>
 
         <View android:layout_width="0dp"
               android:layout_height="match_parent"
               android:layout_weight="1"/>
 
-        <Button
-                android:id="@+id/btnAdd"
+        <Button android:id="@+id/btnAdd"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginRight="30dp"

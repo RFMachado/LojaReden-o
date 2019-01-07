@@ -5,13 +5,15 @@
 
     <string name="title">Descrição</string>
     <string name="category">Categoria</string>
-    <string name="value">Valor</string>
+    <string name="price">Preço</string>
     <string name="gallery">Galeria</string>
     <string name="catalog">Catálogo</string>
     <string name="product">Produtos</string>
     <string name="order">Pedidos</string>
+    <string name="open_gallery">Abrir Galeria</string>
 
     <string name="data_ok">Produto adicionado com sucesso!</string>
+    <string name="missing_data">Alguns dados faltam ser preenchidos</string>
 
     <string name="product_value">R$ %1$.2f</string>
 

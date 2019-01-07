@@ -56,17 +56,22 @@ class ProductFragment: BaseFragment() {
         }
 
         btnAdd.setOnClickListener {
-            viewModel.addProduct(
-                ProductData(
-                    0,
-                    edtDescription.text.toString(),
-                    spinnerCategory.selectedItem.toString(),
-                    "",
-                    "",
-                    edtValue.text.toString().toDouble(),
-                    imagesFromGallery
+
+            if (!edtDescription.text.isEmpty() && !edtValue.text.isEmpty()) {
+                viewModel.addProduct(
+                    ProductData(
+                        0,
+                        edtDescription.text.toString(),
+                        spinnerCategory.selectedItem.toString(),
+                        "",
+                        "",
+                        edtValue.text.toString().toDouble(),
+                        imagesFromGallery
+                    )
                 )
-            )
+            } else {
+                context?.toast(R.string.missing_data)
+            }
         }
 
     }

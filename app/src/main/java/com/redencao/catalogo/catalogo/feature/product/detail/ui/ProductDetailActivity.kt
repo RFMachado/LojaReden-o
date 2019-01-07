@@ -29,6 +29,9 @@ class ProductDetailActivity: AppCompatActivity() {
 
         bindListeners()
         setupViewPager()
+
+        txtDescription.text = product.description
+        txtPrice.text = getString(R.string.product_value, product.value)
     }
 
     private fun bindListeners() {

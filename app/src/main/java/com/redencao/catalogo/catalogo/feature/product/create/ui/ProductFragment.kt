@@ -59,11 +59,11 @@ class ProductFragment: BaseFragment() {
             viewModel.addProduct(
                 ProductData(
                     0,
-                    "camisa redenção",
-                    "camisa",
-                    "GG",
-                    "azul",
-                    49.90,
+                    edtDescription.text.toString(),
+                    spinnerCategory.selectedItem.toString(),
+                    "",
+                    "",
+                    edtValue.text.toString().toDouble(),
                     imagesFromGallery
                 )
             )
@@ -83,10 +83,10 @@ class ProductFragment: BaseFragment() {
         adapter = ImagesPickerAdapter(imagesFromGallery)
     }
 
-    private fun setupSpinner() = with(spinnerType) {
-        val spinnerTypeAdapter = ArrayAdapter.createFromResource(context, R.array.product_type, android.R.layout.simple_spinner_item)
-        spinnerTypeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        adapter = spinnerTypeAdapter
+    private fun setupSpinner() = with(spinnerCategory) {
+        val spinnerCategoryAdapter = ArrayAdapter.createFromResource(context, R.array.product_type, android.R.layout.simple_spinner_item)
+        spinnerCategoryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        adapter = spinnerCategoryAdapter
 
     }
 

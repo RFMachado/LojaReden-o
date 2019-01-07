@@ -22,7 +22,6 @@
             android:orientation="horizontal"
             android:layout_margin="15dp">
 
-
         <android.support.design.widget.TextInputLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -30,6 +29,7 @@
                 android:orientation="vertical">
 
             <android.support.design.widget.TextInputEditText
+                    android:id="@+id/edtDescription"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/title"/>
@@ -37,7 +37,7 @@
         </android.support.design.widget.TextInputLayout>
 
         <Spinner
-                android:id="@+id/spinnerType"
+                android:id="@+id/spinnerCategory"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"/>
@@ -47,6 +47,7 @@
     <android.support.design.widget.TextInputLayout
             android:layout_width="150dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
             android:orientation="vertical">
 
         <android.support.design.widget.TextInputEditText
@@ -54,36 +55,42 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
-                android:layout_marginLeft="15dp"
                 android:hint="@string/value"/>
 
     </android.support.design.widget.TextInputLayout>
 
-    <Button
-            android:id="@+id/btnGallery"
-            android:layout_width="wrap_content"
+
+    <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="15dp"
-            android:text="@string/gallery"/>
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp">
+
+        <Button
+                android:id="@+id/btnGallery"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:text="@string/gallery"/>
+
+        <View android:layout_width="0dp"
+              android:layout_height="match_parent"
+              android:layout_weight="1"/>
+
+        <Button
+                android:id="@+id/btnAdd"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/black_circle"/>
+
+    </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
-
-    <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        <android.support.design.widget.FloatingActionButton
-                android:id="@+id/btnAdd"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end|bottom"
-                android:layout_margin="15dp"
-                android:src="@drawable/ic_plus_white"/>
-    </FrameLayout>
 
 </LinearLayout>

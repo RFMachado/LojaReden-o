@@ -1,9 +1,9 @@
 package com.redencao.catalogo.catalogo.feature.product.create.ui
 
-import android.arch.lifecycle.Observer
+import androidx.lifecycle.Observer
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +14,7 @@ import com.redencao.catalogo.catalogo.feature.database.model.ProductData
 import com.redencao.catalogo.catalogo.feature.shared.BaseFragment
 import com.redencao.catalogo.catalogo.util.extensions.toast
 import kotlinx.android.synthetic.main.fragment_product.*
-import org.koin.android.viewmodel.ext.android.viewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import permissions.dispatcher.NeedsPermission
 import permissions.dispatcher.RuntimePermissions
 import timber.log.Timber
@@ -57,7 +57,7 @@ class ProductFragment: BaseFragment() {
 
         btnAdd.setOnClickListener {
 
-            if (!edtDescription.text.isEmpty() && !edtValue.text.isEmpty()) {
+            if (!edtDescription.text!!.isEmpty() && !edtValue.text!!.isEmpty()) {
                 viewModel.addProduct(
                     ProductData(
                         0,
@@ -84,7 +84,11 @@ class ProductFragment: BaseFragment() {
     }
 
     private fun setuRecyclerView() = with(recyclerView) {
-        layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        layoutManager = LinearLayoutManager(
+            context,
+            LinearLayoutManager.HORIZONTAL,
+            false
+        )
         adapter = ImagesPickerAdapter(imagesFromGallery)
     }
 
@@ -121,7 +125,7 @@ class ProductFragment: BaseFragment() {
                 imagesFromGallery.add(image.path)
             }
 
-            recyclerView.adapter.notifyDataSetChanged()
+            recyclerView.adapter?.notifyDataSetChanged()
 
         }
 

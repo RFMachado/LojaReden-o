@@ -2,7 +2,7 @@ package com.redencao.catalogo.catalogo.feature.splash
 
 import android.os.Bundle
 import android.os.Handler
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.redencao.catalogo.catalogo.R
 import com.redencao.catalogo.catalogo.feature.main.ui.MainActivity
 

@@ -1,6 +1,6 @@
 package com.redencao.catalogo.catalogo.util
 
-import android.arch.persistence.room.TypeConverter
+import androidx.room.TypeConverter
 import com.google.gson.Gson
 
 class Converters {

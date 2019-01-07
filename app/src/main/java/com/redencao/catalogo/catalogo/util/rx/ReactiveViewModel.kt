@@ -1,7 +1,7 @@
 package com.redencao.catalogo.catalogo.util.rx
 
-import android.arch.lifecycle.MutableLiveData
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import io.reactivex.disposables.CompositeDisposable
 
 open class ReactiveViewModel: ViewModel() {

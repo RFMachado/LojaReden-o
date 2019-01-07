@@ -3,10 +3,10 @@ package com.redencao.catalogo.catalogo.feature.main.ui
 import android.content.Context
 import android.os.Parcel
 import android.os.Parcelable
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentActivity
-import android.support.v4.app.FragmentManager
-import android.support.v4.view.AbsSavedState
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.FragmentManager
+import androidx.customview.view.AbsSavedState
 import android.util.AttributeSet
 import android.widget.FrameLayout
 
@@ -43,7 +43,7 @@ class ContainerView @JvmOverloads constructor(context: Context, attrs: Attribute
         }
         else {
             fragment = getItem(position)
-            currentTransaction.add(id, fragment, name)
+            currentTransaction.add(id, fragment!!, name)
         }
 
         currentFragment = fragment as? ContainerFragment

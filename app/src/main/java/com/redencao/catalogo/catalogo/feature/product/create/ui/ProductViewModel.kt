@@ -1,6 +1,6 @@
 package com.redencao.catalogo.catalogo.feature.product.create.ui
 
-import android.arch.lifecycle.MutableLiveData
+import androidx.lifecycle.MutableLiveData
 import com.redencao.catalogo.catalogo.feature.database.model.ProductData
 import com.redencao.catalogo.catalogo.feature.product.create.domain.ProductSource
 import com.redencao.catalogo.catalogo.util.rx.ReactiveViewModel

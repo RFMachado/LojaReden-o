@@ -1,8 +1,8 @@
 package com.redencao.catalogo.catalogo.feature.main.ui
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentTransaction
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -92,7 +92,7 @@ class ContainerFragment : BaseFragment() {
         currentFragment = fragment
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-        fragmentTransaction.replace(R.id.container, currentFragment)
+        fragmentTransaction.replace(R.id.container, currentFragment!!)
 
         if (addToBackStack && addToStack)
             fragmentTransaction.addToBackStack(null)

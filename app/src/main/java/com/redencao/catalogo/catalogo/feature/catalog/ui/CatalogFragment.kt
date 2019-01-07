@@ -1,6 +1,6 @@
 package com.redencao.catalogo.catalogo.feature.catalog.ui
 
-import android.arch.lifecycle.Observer
+import androidx.lifecycle.Observer
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,9 +9,9 @@ import com.redencao.catalogo.catalogo.R
 import com.redencao.catalogo.catalogo.feature.catalog.domain.Product
 import com.redencao.catalogo.catalogo.feature.shared.BaseFragment
 import kotlinx.android.synthetic.main.fragment_catalog.*
-import org.koin.android.viewmodel.ext.android.viewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import timber.log.Timber
-import android.support.v7.widget.GridLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import com.redencao.catalogo.catalogo.feature.product.detail.ui.ProductDetailActivity
 
 class CatalogFragment: BaseFragment() {

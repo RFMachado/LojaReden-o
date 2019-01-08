@@ -18,7 +18,7 @@
 
     <string name="product_value">R$ %1$.2f</string>
 
-    <string-array name="product_type">
+    <string-array name="product_category">
         <item>Camiseta</item>
         <item>Boné</item>
         <item>Tênis</item>
@@ -33,14 +33,5 @@
         <item>XG</item>
         <item>XGG</item>
     </string-array>
-
-    <string-array name="product_color">
-        <item>PP</item>
-        <item>P</item>
-        <item>M</item>
-        <item>G</item>
-        <item>GG</item>
-    </string-array>
-
 
 </resources>

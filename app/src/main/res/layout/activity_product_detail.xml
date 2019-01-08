@@ -28,6 +28,7 @@
                 android:id="@+id/btnArrow"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:background="?selectableItemBackgroundBorderless"
                 android:src="@drawable/ic_arrow_topbar"
                 android:scaleType="center"/>
 

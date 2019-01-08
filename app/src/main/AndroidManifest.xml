@@ -18,6 +18,7 @@
                 android:theme="@style/AppTheme.NoActionBar"/>
 
         <activity android:name=".feature.product.detail.ui.ProductDetailActivity"/>
+        <activity android:name=".feature.product.zoom.ProductZoomActivity"/>
 
         <activity android:name=".feature.splash.SplashActivity"
                   android:screenOrientation="portrait">

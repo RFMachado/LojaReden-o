@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.redencao.catalogo.catalogo.R
 import com.redencao.catalogo.catalogo.feature.catalog.domain.Product
+import com.redencao.catalogo.catalogo.feature.product.zoom.ProductZoomActivity
 import kotlinx.android.synthetic.main.activity_product_detail.*
 
 
@@ -41,7 +42,10 @@ class ProductDetailActivity: AppCompatActivity() {
     }
 
     private fun setupViewPager() {
-        viewPager.adapter = ViewPagerAdapter(this, product.images)
+        viewPager.adapter = ViewPagerAdapter(product.images) { imageList, position ->
+            val intent = ProductZoomActivity.launchIntent(this, imageList, position)
+            startActivity(intent)
+        }
 
         indicator.setViewPager(viewPager)
     }

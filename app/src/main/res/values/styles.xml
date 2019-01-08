@@ -19,6 +19,11 @@
             <item name="android:fontFamily">@font/truenoregular</item>
     </style>
 
+    <style name="trueno.regular.gray" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/truenoregular</item>
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
     <style name="trueno.light" parent="TextAppearance.AppCompat">
         <item name="android:fontFamily">@font/truenolight</item>
     </style>

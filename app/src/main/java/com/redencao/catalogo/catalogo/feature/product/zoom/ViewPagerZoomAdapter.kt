@@ -26,7 +26,6 @@ class ViewPagerZoomAdapter(
             Glide.with(context)
                 .load(data)
                 .into(imgProduct)
-
         }
 
         container.addView(itemView)

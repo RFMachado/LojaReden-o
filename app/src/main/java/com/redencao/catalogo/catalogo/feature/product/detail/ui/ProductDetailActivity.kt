@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.redencao.catalogo.catalogo.R
 import com.redencao.catalogo.catalogo.feature.catalog.domain.Product
 import com.redencao.catalogo.catalogo.feature.product.zoom.ProductZoomActivity
@@ -30,6 +31,7 @@ class ProductDetailActivity: AppCompatActivity() {
 
         bindListeners()
         setupViewPager()
+        setupRecyclerView()
 
         txtDescription.text = product.description
         txtPrice.text = getString(R.string.product_value, product.value)
@@ -48,6 +50,17 @@ class ProductDetailActivity: AppCompatActivity() {
         }
 
         indicator.setViewPager(viewPager)
+    }
+
+    private fun setupRecyclerView() {
+        val sizes = resources.getStringArray(R.array.product_size)
+
+        recyclerView.layoutManager = LinearLayoutManager(
+            this,
+            LinearLayoutManager.HORIZONTAL,
+            false
+        )
+        recyclerView.adapter = SizeAdapter(sizes)
     }
 
 }

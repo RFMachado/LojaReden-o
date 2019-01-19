@@ -52,15 +52,15 @@ class ProductDetailActivity: AppCompatActivity() {
         indicator.setViewPager(viewPager)
     }
 
-    private fun setupRecyclerView() {
+    private fun setupRecyclerView() = with(recyclerView) {
         val sizes = resources.getStringArray(R.array.product_size)
 
-        recyclerView.layoutManager = LinearLayoutManager(
-            this,
+        layoutManager = LinearLayoutManager(
+            this@ProductDetailActivity,
             LinearLayoutManager.HORIZONTAL,
             false
         )
-        recyclerView.adapter = SizeAdapter(sizes)
+        adapter = SizeAdapter(sizes)
     }
 
 }

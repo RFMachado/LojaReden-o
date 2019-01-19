@@ -2,6 +2,7 @@ package com.redencao.catalogo.catalogo.feature.product.detail.ui
 
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.redencao.catalogo.catalogo.R
 import com.redencao.catalogo.catalogo.util.extensions.inflate
@@ -11,11 +12,18 @@ class SizeAdapter (items: Array<String>):
     RecyclerView.Adapter<SizeAdapter.ViewHolder>() {
 
     val sizes = items
+    var selectedColor = 0
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int): Unit = with(holder.itemView) {
         val size = sizes[position]
 
-        txtSize.text = size
+        btnSize.text = size
+
+        setOnClickListener {
+            btnSize.setTextColor(ContextCompat.getColor(context, R.color.gray))
+
+            selectedColor = position
+        }
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)

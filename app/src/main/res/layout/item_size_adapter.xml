@@ -6,7 +6,8 @@
         android:layout_height="50dp"
         tools:text="GG"
         android:layout_margin="5dp"
-        style="@style/trueno.light"
-        android:background="@drawable/black_stroke">
+        android:fontFamily="@font/truenolight"
+        style="?android:attr/borderlessButtonStyle"
+        android:background="@drawable/circle_gray">
 
 </Button>
